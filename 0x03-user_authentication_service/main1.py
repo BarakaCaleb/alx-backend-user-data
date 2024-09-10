@@ -4,7 +4,8 @@ Main file
 """
 
 from db import DB
-from user import User, Base
+from user import User
+
 
 my_db = DB()
 
