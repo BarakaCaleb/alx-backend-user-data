@@ -1,10 +1,10 @@
-i#!/usr/bin/env python3
+#!/usr/bin/env python3
 """
 Main file
 """
 
 from db import DB
-from user import User
+from user import User, Base
 
 my_db = DB()
 
