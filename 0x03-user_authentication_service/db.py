@@ -43,6 +43,9 @@ class DB:
 
     def find_user_by(self, **kwargs) -> User:
         """_summary_
+
+        Returns:
+            User: _description_
         """
         if not kwargs:
             raise InvalidRequestError
@@ -51,3 +54,4 @@ class DB:
         if not user:
             raise NoResultFound
         return user
+
