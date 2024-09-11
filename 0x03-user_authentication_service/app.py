@@ -9,22 +9,26 @@ app = Flask(__name__)
 
 AUTH = Auth()
 
+
 @app.route("/", methods=["GET"])
 def index() -> str:
     """GET route that returns a JSON response."""
     return jsonify({"message": "Bienvenue"})
 
-@app.route("/users", methods=["POST"])
+
+@app.route('/users', methods=['POST'])
 def users() -> str:
-    """POST route that returns a JSON response."""
-    password = request.form.get("password")
-    email = request.form.get("email")
-    # Register user if doesnt exist
+    """_summary_
+    """
+    email = request.form.get('email')
+    password = request.form.get('password')
+
+    # regsiter user if user does not exist
     try:
-        AUTH.register_user(email, password)
-        return jsonify({"email": email, "message": "user created"})
+        user = AUTH.register_user(email, password)
+        return jsonify({"email": user.email, "message": "user created"})
     except Exception:
-        return jsonify({"email": email, "message": "email already registered"}), 400
+        return jsonify({"message": "email already registered"}), 400
 
 
 if __name__ == "__main__":
