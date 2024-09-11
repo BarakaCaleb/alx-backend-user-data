@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""Auth module"""
 
 import hashlib
 import base64
@@ -8,7 +9,6 @@ from db import DB
 from user import User
 from typing import Union
 
-"""Auth module"""
 
 def _hash_password(self, password: str) -> str:
     """"
