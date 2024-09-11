@@ -3,10 +3,10 @@
 
 import hashlib
 import base64
-import uuid
 import bcrypt
 from db import DB
 from sqlalchemy.orm.exc import NoResultFound
+from uuid import uuid4
 from user import User
 from typing import Union
 
